@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "type": "quiz",
+    "question": "Where is Helsinki located?",
+    "answers": [
+      "Norway",
+      "Sweden",
+      "Finland",
+      "Iceland"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2,
+    "type": "quiz",
+    "question": "Where is Stockholm located?",
+    "answers": [
+      "Norway",
+      "Sweden",
+      "Finland",
+      "Iceland"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "type": "quiz",
+    "question": "Where is Oslo located?",
+    "answers": [
+      "Norway",
+      "Sweden",
+      "Finland",
+      "Iceland"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 4,
+    "type": "quiz",
+    "question": "Where is Reykjavík located?",
+    "answers": [
+      "Norway",
+      "Sweden",
+      "Finland",
+      "Iceland"
+    ],
+    "correct": 3
+  }
+]
