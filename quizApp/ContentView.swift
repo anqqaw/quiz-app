@@ -10,7 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        GameView(question: ModelData().quizQuestions[0])
+        NavigationView {
+            VStack {
+                NavigationLink(destination: GameView(question: ModelData().quizQuestions[0])) {
+                    Text("Start")
+                        .frame(width: 200, height: 100)
+                        .background(.red)
+                        .foregroundColor(.black)
+                }
+            }
+        }
     }
 }
 

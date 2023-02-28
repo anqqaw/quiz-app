@@ -17,12 +17,11 @@ struct GameView: View {
     }
 
     var body: some View {
-        ZStack() {
+        ZStack(alignment: .top) {
             Color(.blue)
                 .ignoresSafeArea()
             VStack() {
-                HStack(alignment: .top) {
-                    Spacer()
+                HStack() {
                     Text("\(question.id)/4")
                         .frame(width: 100, height: 100)
                         .background(.orange)
@@ -48,10 +47,10 @@ struct GameView: View {
                         .foregroundColor(.black)
                         .background(.red)
                 }
-
             }
             .padding(10)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
