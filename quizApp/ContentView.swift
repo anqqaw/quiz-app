@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: GameView(question: ModelData().quizQuestions[0])) {
+                NavigationLink(destination: GameView(question: ModelData().quizQuestions[QuestionNumber().getNumber()])) {
                     Text("Start")
                         .frame(width: 200, height: 100)
                         .background(.red)

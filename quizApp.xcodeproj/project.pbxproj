@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422C933829B670D400CA7A94 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C933729B670D400CA7A94 /* VictoryView.swift */; };
 		4296F306299BE066000C226B /* quizAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F305299BE066000C226B /* quizAppApp.swift */; };
 		4296F308299BE066000C226B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F307299BE066000C226B /* ContentView.swift */; };
 		4296F30A299BE067000C226B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4296F309299BE067000C226B /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		422C933729B670D400CA7A94 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
 		4296F302299BE066000C226B /* quizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4296F305299BE066000C226B /* quizAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizAppApp.swift; sourceTree = "<group>"; };
 		4296F307299BE066000C226B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				4296F305299BE066000C226B /* quizAppApp.swift */,
 				4296F307299BE066000C226B /* ContentView.swift */,
 				4296F319299BE258000C226B /* QuizQuestion.swift */,
+				422C933729B670D400CA7A94 /* VictoryView.swift */,
 				4296F31B299BE763000C226B /* GameView.swift */,
 				42C8A7C529A8C9D900FD4984 /* RadioButton.swift */,
 				4296F31F299CEA2A000C226B /* QuizChoices.swift */,
@@ -179,6 +182,7 @@
 				4296F320299CEA2A000C226B /* QuizChoices.swift in Sources */,
 				4296F317299BE1DB000C226B /* ModelData.swift in Sources */,
 				4296F31C299BE763000C226B /* GameView.swift in Sources */,
+				422C933829B670D400CA7A94 /* VictoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

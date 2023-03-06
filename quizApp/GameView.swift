@@ -7,50 +7,79 @@
 
 import SwiftUI
 
+class QuestionNumber {
+    var questionNumber = 0
+
+    func getNumber() -> Int {
+        return questionNumber
+    }
+
+    func nextNumber() {
+        questionNumber += 1
+    }
+
+    func resetNumber(number: Int = 0) {
+        questionNumber = number
+    }
+}
+
+
 struct GameView: View {
     @State private var lastQuestion = false
     @EnvironmentObject var modelData: ModelData
-    var question: QuizQuestion
-
-    var quizQuestionIndex: Int {
-        modelData.quizQuestions.firstIndex(where: { $0.id == question.id })!
-    }
+    @State var question: QuizQuestion
+    @State var questionNumber = QuestionNumber()
+    var usersAnswers = [String]()
 
     var body: some View {
-        ZStack(alignment: .top) {
-            Color(.blue)
-                .ignoresSafeArea()
-            VStack() {
-                HStack() {
-                    Text("\(question.id)/4")
-                        .frame(width: 100, height: 100)
-                        .background(.orange)
-                }
+        
+        if lastQuestion {
+            VictoryView()
+        }
+        else {
+            ZStack(alignment: .top) {
+                Color(.blue)
+                    .ignoresSafeArea()
+                VStack() {
+                    HStack() {
+                        Text("\(question.id)/4")
+                            .frame(width: 100, height: 100)
+                            .background(.orange)
+                    }
 
-                Text("\(question.question)")
-                    .frame(width: 300, height: 100)
-                    .background(.yellow)
+                    Text("\(question.question)")
+                        .frame(width: 300, height: 100)
+                        .background(.yellow)
 
-                HStack {
-                    RadioButtonGroup(items: [question.answers[0], question.answers[1], question.answers[2], question.answers[3]], selectedId: "") { selected in
+                    HStack {
+                        RadioButtonGroup(items: question.answers, selectedId: "") { selected in
+                        }
+                    }
+                    .padding()
+                    .frame(width: 300, height: 400)
+                    .background(.green)
+
+                    Button() {
+                        if question.id == 4 {
+                            lastQuestion.toggle()
+                            questionNumber.nextNumber()
+                        }
+                        if question.id <= 3 {
+                            questionNumber.nextNumber()
+                            question = ModelData().quizQuestions[questionNumber.getNumber()]
+                        }
+
+                    } label: {
+                        Text(lastQuestion ? "End" : "Next")
+                            .frame(width: 300, height: 100)
+                            .foregroundColor(.black)
+                            .background(.red)
                     }
                 }
-                .padding()
-                .frame(width: 300, height: 400)
-                .background(.green)
-
-                Button {
-                    lastQuestion.toggle()
-                } label: {
-                    Text(lastQuestion ? "End" : "Next")
-                        .frame(width: 300, height: 100)
-                        .foregroundColor(.black)
-                        .background(.red)
-                }
+                .padding(10)
             }
-            .padding(10)
+            .navigationBarBackButtonHidden(true)
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
