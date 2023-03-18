@@ -21,6 +21,7 @@ class QuestionNumber {
     func resetNumber(number: Int = 0) {
         questionNumber = number
     }
+
 }
 
 
@@ -29,14 +30,15 @@ struct GameView: View {
     @EnvironmentObject var modelData: ModelData
     @State var question: QuizQuestion
     @State var questionNumber = QuestionNumber()
-    var usersAnswers = [String]()
+    @State var selectedId = String()
+    @State var points = 0
+    
 
     var body: some View {
         
         if lastQuestion {
-            VictoryView()
-        }
-        else {
+            VictoryView(questionsCorrect: points)
+        } else {
             ZStack(alignment: .top) {
                 Color(.blue)
                     .ignoresSafeArea()
@@ -52,7 +54,8 @@ struct GameView: View {
                         .background(.yellow)
 
                     HStack {
-                        RadioButtonGroup(items: question.answers, selectedId: "") { selected in
+                        RadioButtonGroup(items: question.answers, selectedId: "0") { selected in
+                            selectedId = selected
                         }
                     }
                     .padding()
@@ -60,10 +63,17 @@ struct GameView: View {
                     .background(.green)
 
                     Button() {
+                        // clear radiobutton after button is pressed
+
+                        if selectedId == question.answers[question.correct] {
+                            points += 1
+                        }
+                        
                         if question.id == 4 {
                             lastQuestion.toggle()
                             questionNumber.nextNumber()
                         }
+
                         if question.id <= 3 {
                             questionNumber.nextNumber()
                             question = ModelData().quizQuestions[questionNumber.getNumber()]

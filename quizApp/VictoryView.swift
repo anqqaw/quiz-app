@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VictoryView: View {
     @State var modelData = ModelData()
-    @State var questionsCorrect = 0
+    @State var questionsCorrect: Int
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,12 +28,11 @@ struct VictoryView: View {
             }
             .frame(width: 300)
             .foregroundColor(.blue)
-//            .background(.blue)
             .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.blue, lineWidth: 5)
                     )
-            
+
             Button() {
 
                 QuestionNumber().resetNumber()
@@ -42,7 +41,6 @@ struct VictoryView: View {
                     .frame(width: 300, height: 100)
                     .foregroundColor(.purple)
                     .font(.title)
-                    //.background(.purple)
                     .overlay(
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(Color.purple, lineWidth: 5)
@@ -50,10 +48,25 @@ struct VictoryView: View {
             }
         }
     }
+    
+    func checkCorrectAnswers(answers: [String], correctAnswers: [String]) -> Int {
+        var i = 0
+        var corrects = 0
+
+        answers.forEach { answer in
+            if answer == correctAnswers[i] {
+                corrects += 1
+            }
+            i += 1
+        }
+
+        return corrects
+    }
+
 }
 
 struct VictoryView_Previews: PreviewProvider {
     static var previews: some View {
-        VictoryView()
+        VictoryView(questionsCorrect: 0)
     }
 }

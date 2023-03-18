@@ -16,8 +16,8 @@
 		4296F317299BE1DB000C226B /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F316299BE1DB000C226B /* ModelData.swift */; };
 		4296F31A299BE258000C226B /* QuizQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F319299BE258000C226B /* QuizQuestion.swift */; };
 		4296F31C299BE763000C226B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F31B299BE763000C226B /* GameView.swift */; };
-		4296F320299CEA2A000C226B /* QuizChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F31F299CEA2A000C226B /* QuizChoices.swift */; };
-		42C8A7C629A8C9D900FD4984 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C8A7C529A8C9D900FD4984 /* RadioButton.swift */; };
+		4296F320299CEA2A000C226B /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F31F299CEA2A000C226B /* RadioButton.swift */; };
+		42C8A7C629A8C9D900FD4984 /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C8A7C529A8C9D900FD4984 /* RadioButtonGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		4296F316299BE1DB000C226B /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		4296F319299BE258000C226B /* QuizQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestion.swift; sourceTree = "<group>"; };
 		4296F31B299BE763000C226B /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		4296F31F299CEA2A000C226B /* QuizChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizChoices.swift; sourceTree = "<group>"; };
-		42C8A7C529A8C9D900FD4984 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		4296F31F299CEA2A000C226B /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		42C8A7C529A8C9D900FD4984 /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 				4296F319299BE258000C226B /* QuizQuestion.swift */,
 				422C933729B670D400CA7A94 /* VictoryView.swift */,
 				4296F31B299BE763000C226B /* GameView.swift */,
-				42C8A7C529A8C9D900FD4984 /* RadioButton.swift */,
-				4296F31F299CEA2A000C226B /* QuizChoices.swift */,
+				42C8A7C529A8C9D900FD4984 /* RadioButtonGroup.swift */,
+				4296F31F299CEA2A000C226B /* RadioButton.swift */,
 				4296F315299BE0DA000C226B /* Helpers */,
 				4296F309299BE067000C226B /* Assets.xcassets */,
 				4296F318299BE201000C226B /* Resources */,
@@ -176,10 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4296F308299BE066000C226B /* ContentView.swift in Sources */,
-				42C8A7C629A8C9D900FD4984 /* RadioButton.swift in Sources */,
+				42C8A7C629A8C9D900FD4984 /* RadioButtonGroup.swift in Sources */,
 				4296F306299BE066000C226B /* quizAppApp.swift in Sources */,
 				4296F31A299BE258000C226B /* QuizQuestion.swift in Sources */,
-				4296F320299CEA2A000C226B /* QuizChoices.swift in Sources */,
+				4296F320299CEA2A000C226B /* RadioButton.swift in Sources */,
 				4296F317299BE1DB000C226B /* ModelData.swift in Sources */,
 				4296F31C299BE763000C226B /* GameView.swift in Sources */,
 				422C933829B670D400CA7A94 /* VictoryView.swift in Sources */,

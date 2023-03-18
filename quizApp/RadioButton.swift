@@ -1,38 +1,78 @@
 //
-//  RadioButton.swift
+//  QuizChoices.swift
 //  quizApp
 //
-//  Created by Aarni on 24.2.2023.
+//  Created by Aarni on 15.2.2023.
 //
 
 import SwiftUI
 
-struct RadioButtonGroup: View {
-//    @EnvironmentObject var modelData: ModelData()
-//    var question: QuizQuestion()
 
-    let items : [String]
+struct ColorInvert: ViewModifier {
 
-    @State var selectedId: String = ""
+    @Environment(\.colorScheme) var colorScheme
 
-    let callback: (String) -> ()
-
-    var body: some View {
-        VStack {
-            ForEach(0..<items.count, id:\.self) { index in
-                QuizChoices(self.items[index], callback: self.radioGroupCallback, selectedID: self.selectedId)
+    func body(content: Content) -> some View {
+        Group {
+            if colorScheme == .dark {
+                content.colorInvert()
+            } else {
+                content
             }
         }
     }
+}
 
-    func radioGroupCallback(id: String) {
-        selectedId = id
-        callback(id)
+struct RadioButton: View {
+    @Environment(\.colorScheme) var colorScheme
+
+    let id: String
+    let callback: (String)->()
+    let selectedID : String
+    let size: CGFloat
+    let color: Color
+    let textSize: CGFloat
+    
+    init(
+            _ id: String,
+            callback: @escaping (String)->(),
+            selectedID: String,
+            size: CGFloat = 20,
+            color: Color = Color.primary,
+            textSize: CGFloat = 14
+    ) {
+            self.id = id
+            self.size = size
+            self.color = color
+            self.textSize = textSize
+            self.selectedID = selectedID
+            self.callback = callback
+    }
+    
+    var body: some View {
+        Button(action:{
+            self.callback(self.id)
+        }) {
+            HStack(alignment: .center, spacing: 10) {
+                Image(systemName: self.selectedID == self.id ? "largecircle.fill.circle" : "circle")
+                    .renderingMode(.original)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: self.size, height: self.size)
+                    .modifier(ColorInvert())
+                Text(id)
+                    .font(Font.system(size: textSize))
+                Spacer()
+            }.foregroundColor(self.color)
+        }
+        .foregroundColor(self.color)
     }
 }
 
-struct RadioButtonGroup_Previews: PreviewProvider {
+struct QuizChoices_Previews: PreviewProvider {
+    static let modelData = ModelData()
+
     static var previews: some View {
-        RadioButtonGroup(items: ["HELLO"], callback: { _ in })
+        RadioButton("Test", callback: { _ in }, selectedID: "0")
     }
 }
