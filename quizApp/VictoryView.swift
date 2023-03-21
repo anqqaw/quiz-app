@@ -33,17 +33,14 @@ struct VictoryView: View {
                             .stroke(Color.blue, lineWidth: 5)
                     )
 
-            Button() {
-
-                QuestionNumber().resetNumber()
-            } label: {
+            NavigationLink(destination: GameView(question: ModelData().quizQuestions[QuestionNumber().getNumber()])) {
                 Text("Play Again")
                     .frame(width: 300, height: 100)
                     .foregroundColor(.purple)
                     .font(.title)
                     .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.purple, lineWidth: 5)
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.purple, lineWidth: 5)
                             )
             }
         }

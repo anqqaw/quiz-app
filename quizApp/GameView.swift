@@ -28,16 +28,16 @@ enum Option: CaseIterable {
     case first, second, third, fourth
 
     var description: Int {
-      switch self {
-      case .first:
-        return 0
-      case .second:
-        return 1
-      case .third:
-        return 2
-      case .fourth:
-        return 3
-      }
+        switch self {
+        case .first:
+            return 0
+        case .second:
+            return 1
+        case .third:
+            return 2
+        case .fourth:
+            return 3
+        }
     }
 }
 
@@ -46,11 +46,10 @@ struct GameView: View {
     @EnvironmentObject var modelData: ModelData
     @State var question: QuizQuestion
     @State var questionNumber = QuestionNumber()
-    @State var selectedId = String()
     @State var points = 0
-    
+
     @State private var selection: Option?
-    
+
 
     var body: some View {
 
@@ -70,31 +69,31 @@ struct GameView: View {
                     Text("\(question.question)")
                         .frame(width: 300, height: 100)
                         .background(.yellow)
-
                     HStack {
                         RadioButtonGroup(selection: $selection,
-                                           orientation: .vertical,
-                                           tags: Option.allCases,
-                                           button: { isSelected in
+                                         orientation: .vertical,
+                                         tags: Option.allCases,
+                                         button: { isSelected in
                             ZStack {
-                              Circle()
-                                .foregroundColor(.purple)
-                                .frame(width: 32, height: 32)
-                              if isSelected {
                                 Circle()
-                                  .foregroundColor(Color.yellow)
-                                  .frame(width: 16, height: 16)
-                              }
+                                    .foregroundColor(.purple)
+                                    .frame(width: 32, height: 32)
+                                if isSelected {
+                                    Circle()
+                                        .foregroundColor(Color.yellow)
+                                        .frame(width: 16, height: 16)
+                                }
                             }
-                          },
-                                           label: { tag in
-                        Text(question.answers[(tag.description)])
-                          })
+                        },
+                                         label: { tag in
+                            Text(question.answers[(tag.description)])
+                        })
+                        Spacer()
                     }
                     .padding()
                     .frame(width: 300, height: 400)
                     .background(.green)
-
+                    
                     Button() {
                         if selection?.description == question.correct {
                             points += 1
@@ -102,7 +101,7 @@ struct GameView: View {
 
                         if question.id == 4 {
                             lastQuestion.toggle()
-                            questionNumber.nextNumber()
+                            questionNumber.resetNumber()
                         }
 
                         if question.id <= 3 {
