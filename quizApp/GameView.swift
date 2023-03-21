@@ -112,7 +112,7 @@ struct GameView: View {
                         selection = nil
 
                     } label: {
-                        Text(lastQuestion ? "End" : "Next")
+                        Text(question.id == 4 ? "End" : "Next")
                             .frame(width: 300, height: 100)
                             .foregroundColor(.black)
                             .background(.red)
