@@ -16,12 +16,10 @@
     "type": "quiz",
     "question": "Where is Stockholm located?",
     "answers": [
-      "Norway",
       "Sweden",
-      "Finland",
-      "Iceland"
+      "Finland"
     ],
-    "correct": 1
+    "correct": 0
   },
   {
     "id": 3,
@@ -29,7 +27,6 @@
     "question": "Where is Oslo located?",
     "answers": [
       "Norway",
-      "Sweden",
       "Finland",
       "Iceland"
     ],
@@ -44,6 +41,78 @@
       "Sweden",
       "Finland",
       "Iceland"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 5,
+    "type": "quiz",
+    "question": "Where is Copenhagen located?",
+    "answers": [
+      "Norway",
+      "Sweden",
+      "Denmark",
+      "Iceland"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "type": "quiz",
+    "question": "Where is Berlin located?",
+    "answers": [
+      "Norway",
+      "Germany",
+      "Denmark",
+      "Iceland"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "type": "quiz",
+    "question": "Where is Warsaw located?",
+    "answers": [
+      "Poland",
+      "Germany",
+      "Denmark",
+      "Iceland"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 11,
+    "type": "quiz",
+    "question": "Where is Paris located?",
+    "answers": [
+      "Poland",
+      "Germany",
+      "Denmark",
+      "France"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 12,
+    "type": "quiz",
+    "question": "Where is London located?",
+    "answers": [
+      "Ireland",
+      "Wales",
+      "England",
+      "Scotland"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 13,
+    "type": "quiz",
+    "question": "Where is Manchester located?",
+    "answers": [
+      "Scotland",
+      "Ireland",
+      "Wales",
+      "England"
     ],
     "correct": 3
   }
