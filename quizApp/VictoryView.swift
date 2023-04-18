@@ -33,7 +33,8 @@ struct VictoryView: View {
                             .stroke(Color.blue, lineWidth: 5)
                     )
 
-            NavigationLink(destination: GameView(question: ModelData().quizQuestions[QuestionNumber().getNumber()])) {
+            NavigationLink(destination: GameView(question: ModelData().quizQuestions[QuestionNumber().getNumber()])) { // problem
+
                 Text("Play Again")
                     .frame(width: 300, height: 100)
                     .foregroundColor(.purple)

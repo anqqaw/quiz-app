@@ -18,6 +18,9 @@
 		4296F31C299BE763000C226B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F31B299BE763000C226B /* GameView.swift */; };
 		4296F320299CEA2A000C226B /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4296F31F299CEA2A000C226B /* RadioButton.swift */; };
 		42C8A7C629A8C9D900FD4984 /* RadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C8A7C529A8C9D900FD4984 /* RadioButtonGroup.swift */; };
+		42F9E6EE29EEDB9E009708B6 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F9E6ED29EEDB9E009708B6 /* QuizView.swift */; };
+		42F9E6F029EEDC42009708B6 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F9E6EF29EEDC42009708B6 /* Option.swift */; };
+		42F9E6F229EEDC6E009708B6 /* QuestionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F9E6F129EEDC6E009708B6 /* QuestionNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		4296F31B299BE763000C226B /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		4296F31F299CEA2A000C226B /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		42C8A7C529A8C9D900FD4984 /* RadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonGroup.swift; sourceTree = "<group>"; };
+		42F9E6ED29EEDB9E009708B6 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		42F9E6EF29EEDC42009708B6 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		42F9E6F129EEDC6E009708B6 /* QuestionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,9 @@
 				4296F319299BE258000C226B /* QuizQuestion.swift */,
 				422C933729B670D400CA7A94 /* VictoryView.swift */,
 				4296F31B299BE763000C226B /* GameView.swift */,
+				42F9E6ED29EEDB9E009708B6 /* QuizView.swift */,
+				42F9E6F129EEDC6E009708B6 /* QuestionNumber.swift */,
+				42F9E6EF29EEDC42009708B6 /* Option.swift */,
 				42C8A7C529A8C9D900FD4984 /* RadioButtonGroup.swift */,
 				4296F31F299CEA2A000C226B /* RadioButton.swift */,
 				4296F315299BE0DA000C226B /* Helpers */,
@@ -177,10 +186,13 @@
 			files = (
 				4296F308299BE066000C226B /* ContentView.swift in Sources */,
 				42C8A7C629A8C9D900FD4984 /* RadioButtonGroup.swift in Sources */,
+				42F9E6F029EEDC42009708B6 /* Option.swift in Sources */,
+				42F9E6EE29EEDB9E009708B6 /* QuizView.swift in Sources */,
 				4296F306299BE066000C226B /* quizAppApp.swift in Sources */,
 				4296F31A299BE258000C226B /* QuizQuestion.swift in Sources */,
 				4296F320299CEA2A000C226B /* RadioButton.swift in Sources */,
 				4296F317299BE1DB000C226B /* ModelData.swift in Sources */,
+				42F9E6F229EEDC6E009708B6 /* QuestionNumber.swift in Sources */,
 				4296F31C299BE763000C226B /* GameView.swift in Sources */,
 				422C933829B670D400CA7A94 /* VictoryView.swift in Sources */,
 			);
