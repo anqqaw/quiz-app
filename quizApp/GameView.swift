@@ -18,7 +18,7 @@ struct GameView: View {
 
     var body: some View {
         if lastQuestion {
-            VictoryView(questionsCorrect: points)
+            VictoryView(questionsCorrect: points, lastQuestion: $lastQuestion)
         } else {
             QuizView(lastQuestion: $lastQuestion, question: question, points: $points)
         }

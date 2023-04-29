@@ -10,6 +10,7 @@ import SwiftUI
 struct VictoryView: View {
     @State var modelData = ModelData()
     @State var questionsCorrect: Int
+    @Binding var lastQuestion: Bool
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -32,20 +33,19 @@ struct VictoryView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.blue, lineWidth: 5)
                     )
-
-            NavigationLink(destination: GameView(question: ModelData().quizQuestions[QuestionNumber().getNumber()])) { // problem
-
-                Text("Play Again")
-                    .frame(width: 300, height: 100)
-                    .foregroundColor(.purple)
-                    .font(.title)
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.purple, lineWidth: 5)
-                            )
+            
+                Button(action: changeLast) {
+                    Text("Play Again")
+                        .frame(width: 300, height: 100)
+                        .foregroundColor(.purple)
+                        .font(.title)
+                        .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.purple, lineWidth: 5)
+                                )
+                }
             }
         }
-    }
     
     func checkCorrectAnswers(answers: [String], correctAnswers: [String]) -> Int {
         var i = 0
@@ -61,10 +61,14 @@ struct VictoryView: View {
         return corrects
     }
 
+    func changeLast() {
+        lastQuestion = false
+    }
+
 }
 
 struct VictoryView_Previews: PreviewProvider {
     static var previews: some View {
-        VictoryView(questionsCorrect: 0)
+        VictoryView(questionsCorrect: 0, lastQuestion: .constant(true))
     }
 }
