@@ -13,6 +13,7 @@ struct QuizView: View {
     @State var question: QuizQuestion
     @State var questionNumber = QuestionNumber()
     @Binding var points: Int
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     @State private var selection: Option?
 
@@ -75,6 +76,14 @@ struct QuizView: View {
 
                     } label: {
                         Text(questionNumber.getNumber() == ModelData().quizQuestions.count - 1 ? "End" : "Next")
+                            .frame(width: 300, height: 100)
+                            .foregroundColor(.black)
+                            .background(.red)
+                    }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Cancel")
                             .frame(width: 300, height: 100)
                             .foregroundColor(.black)
                             .background(.red)
