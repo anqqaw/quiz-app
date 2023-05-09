@@ -9,12 +9,12 @@ import Foundation
 
 class RandomHelpers  {
 
-    static func randomizeOrder(modelData: ModelData) -> [Int] {
+    static func randomizeOrder(quizQuestions: [QuizQuestion]) -> [Int] {
         
         var randomOrder = [Int]()
 
-        while modelData.quizQuestions.count < 5 { // modelData.quizQuestions.endIndex-1
-            let randomPick = modelData.quizQuestions.randomElement()!
+        while randomOrder.count < 5 { // .endIndex-1
+            let randomPick = quizQuestions.randomElement()!
 
             if !(randomOrder.contains(randomPick.id)) {
                 randomOrder.append(randomPick.id)

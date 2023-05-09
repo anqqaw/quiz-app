@@ -12,6 +12,7 @@ struct QuizView: View {
 //    @EnvironmentObject var modelData: ModelData
     @State var question: QuizQuestion
     @State var questionNumber = QuestionNumber()
+    @State var questions: [QuizQuestion]
     @Binding var points: Int
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -24,7 +25,7 @@ struct QuizView: View {
             ScrollView(.vertical) {
                 VStack() {
                     HStack() {
-                        Text("\(questionNumber.getNumber() + 1)/\(ModelData().quizQuestions.count)")
+                        Text("\(questionNumber.getNumber() + 1)/\(questions.count)")
                             .frame(width: 100, height: 100)
                             .background(.orange)
                     }
@@ -62,20 +63,20 @@ struct QuizView: View {
                             points += 1
                         }
 
-                        if questionNumber.getNumber() == ModelData().quizQuestions.count - 1 {
+                        if questionNumber.getNumber() == questions.count - 1 {
                             lastQuestion.toggle()
                             questionNumber.resetNumber()
                         }
 
-                    if questionNumber.getNumber() < ModelData().quizQuestions.count - 1 {
+                    if questionNumber.getNumber() < questions.count - 1 {
                             questionNumber.nextNumber()
-                            question = ModelData().quizQuestions[questionNumber.getNumber()]
+                            question = questions[questionNumber.getNumber()]
                         }
 
                         selection = nil
 
                     } label: {
-                        Text(questionNumber.getNumber() == ModelData().quizQuestions.count - 1 ? "End" : "Next")
+                        Text(questionNumber.getNumber() == questions.count - 1 ? "End" : "Next")
                             .frame(width: 300, height: 100)
                             .foregroundColor(.black)
                             .background(.red)

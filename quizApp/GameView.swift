@@ -20,8 +20,23 @@ struct GameView: View {
         if lastQuestion {
             VictoryView(questionsCorrect: points, lastQuestion: $lastQuestion)
         } else {
-            QuizView(lastQuestion: $lastQuestion, question: question, points: $points)
+            QuizView(lastQuestion: $lastQuestion, question: question, questions: prepareQuestions() , points: $points)
         }
+    }
+
+    func prepareQuestions() -> [QuizQuestion] {
+        let randomQuestions = RandomHelpers.randomizeOrder(quizQuestions: ModelData().quizQuestions)
+
+        var quizQuestions : [QuizQuestion] = []
+
+        randomQuestions.forEach { questionId in
+            for modelDataQuizQuestion in ModelData().quizQuestions {
+                if modelDataQuizQuestion.id == questionId {
+                    quizQuestions.append(modelDataQuizQuestion)
+                }
+            }
+        }
+        return quizQuestions
     }
 }
 

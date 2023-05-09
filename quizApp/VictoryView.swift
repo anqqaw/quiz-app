@@ -46,7 +46,7 @@ struct VictoryView: View {
                 }
             }
         }
-    
+
     func checkCorrectAnswers(answers: [String], correctAnswers: [String]) -> Int {
         var i = 0
         var corrects = 0
